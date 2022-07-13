@@ -1,5 +1,5 @@
 function easyHTTP() {
-  this.http = new XMLHttpRequest();
+  this.http = new XMLHttpRequest(); //new instance of xhr
 }
 
 //Make an HTTP GET Request

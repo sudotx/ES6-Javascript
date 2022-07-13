@@ -1,17 +1,17 @@
-document.getElementById("button1").addEventListener("click", loadCustomer);
+document.getElementById("button1").addEventListener("click", loadCustomer); //listens to clicks on button1 then calls the function
 
-document.getElementById("button2").addEventListener("click", loadCustomers);
+document.getElementById("button2").addEventListener("click", loadCustomers); //listens to clicks on button2 then calls the function
 
 //load single customer
 function loadCustomer() {
-  const xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest(); //new instance of xhr, native to javascript
 
-  xhr.open("GET", "customer.json", true);
+  xhr.open("GET", "customer.json", true); //first calls GET a "customer.json" file
 
   xhr.onload = function () {
     if (this.status == 200) {
       // console.log(this.responseText);
-      const customer = JSON.parse(this.responseText);
+      const customer = JSON.parse(this.responseText); //if call is successful, return the respective response text
 
       const output = `
       <ul>
@@ -21,7 +21,7 @@ function loadCustomer() {
         <li>Email: ${customer.email}</li>
       </ul>
       `;
-      document.getElementById("customer").innerHTML = output;
+      document.getElementById("customer").innerHTML = output; //injects html into page -- method unsafe as malicious script parsed as HTML can be injected into the page
     }
   };
 
