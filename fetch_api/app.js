@@ -9,7 +9,9 @@ function getText() {
     .then((res) => res.text())
     //returns text in promise
     .then((data) => {
+      // then logs it to the console
       console.log(data);
+      // also inject this as a new node into the DOM
       document.getElementById("output").innerHTML = data;
     })
     //returns error on rejection
@@ -26,7 +28,7 @@ function getJson() {
     .then((data) => {
       console.log(data);
       let output = "";
-      //loop thru array of json files
+      //loop through array of json files
       data.forEach(function (post) {
         output += `<li>${post.title}</li>`;
       });
@@ -39,7 +41,7 @@ function getJson() {
     });
 }
 function getAPIdata() {
-  //fetch from external api as json
+  //fetch from external api as json, in this case a list of users
   fetch("https://api.github.com/users")
     .then((res) => res.json())
     .then((data) => {
