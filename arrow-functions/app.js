@@ -9,6 +9,5 @@
 
 const users = ["Nathan", "John"];
 
-const namelen = users.map((name) => name.length);
-q
+const namelen = users.map((name) => name.length); // name legnth ahahaha
 console.log(namelen);
